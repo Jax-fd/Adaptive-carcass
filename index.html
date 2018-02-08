@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>Carcass</title>
+    <!-- <link href="/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="/style.css" rel="stylesheet">
+    
+    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/jquery-3.2.1.min.js"> </script>
+    <!-- <script type="text/javascript" src="/js/bootstrap.js"></script>  -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+   
+    
+    <script type="text/javascript">
+      
+      //Выделение пунктов меню при клике
+      function toggleMenuItems(id){
+        for (var i = 1; i <=4 ; i++) {
+          if(i==id){
+            $('#'+i).parent().addClass("menu_active");
+          }else{
+            $('#'+i).parent().removeClass("menu_active");
+          }
+        }
+      };
+
+      //Функция изменения контента в зависимости от нажатого пункта меню
+      function clickMenu(id){
+        //если малый экран, то меню убирается
+        if($(window).width() <=767){  minMenu();  }
+        
+        switch (id){
+          case "1":
+            $('#dheader-text').html('Пункт меню 1');
+            /*reload content*/
+          break;
+
+          case "2":
+            $('#dheader-text').html('Пункт меню 2');
+            /*reload content*/
+          break;
+
+          case "3":
+            $('#dheader-text').html('Пункт меню 3');
+           /*reload content*/
+          break;
+
+          case "4":
+            $('#dheader-text').html('Пункт меню 4');
+            /*reload content*/
+          break;
+          
+          case "5":
+            $('#dheader-text').html('Настройки');
+            /*reload content*/
+          break;
+
+          case "6":
+            $('#dheader-text').html('Выход');
+            /*reload content*/
+          break;
+        };
+        
+      }//end clickMenu
+
+      //Информационное сообщение
+      function displayInfo(text) {
+        $('#info_msg').css("display","block");
+        $('#info_txt').html(text);
+      }
+      function hideInfo(){
+        $('#info_msg').css("display","none");
+      }
+
+    </script>
+
+  </head>
+<body>
+  <!-- окошко сообщений -->
+  <div id="info_msg"> <p id="info_txt">сообщение сообщение сообщение сообщение сообщение сообщение сообщение сообщение сообщение</p>
+    <button id="info_btn" class="info_btn" onclick="hideInfo()"> OK </button>
+  </div>
+  <!-- строка загрузки-->
+  <div id="mini_info">
+    Загрузка...
+  </div>
+  <!-- ШАПКА -->
+  <div id="dheader">
+    <div id="toggleMenu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
+    <div id="driver">Пользователь</div>
+    <div id="fio_driver">доп.инфа</div>
+    <!-- <div class="v_delimiter"></div> -->
+    <div id=dheader-text></div>
+    
+  </div>
+
+  <!-- ЛЕВЫЙ САЙТБАР -->
+  <div id="sidebar-fixed">
+    <!-- <div class="delimiter"></div> -->
+    <div class="menu_item">
+      <a id="1" onclick="clickMenu(this.id)" >
+        <div class="svg">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <span class="txt_menu">Пункт меню 1</span>
+      </a>
+    </div>
+    <div class="menu_item">
+      <a  id="2" onclick="clickMenu(this.id)">
+        <div class="svg">
+          <i class="far fa-star"></i>
+        </div>
+        <span class="txt_menu">Пункт меню 2</span>
+      </a>
+    </div>
+    <div class="menu_item">
+      <a id="3" onclick="clickMenu(this.id)">
+        <div class="svg">
+          <i class="fas fa-flask"></i>
+        </div>
+        <span class="txt_menu">Пункт меню 3</span>
+      </a>
+    </div>
+    <!-- <div class="menu_item"><a href="#">Рейтинг</a></div>
+    <div class="menu_item"><a href="#">Фотоконтроль</a></div> -->
+    <div class="menu_item">
+      <a id="4" onclick="clickMenu(this.id)">
+        <div class="svg">
+           <i class="fas fa-chart-bar"></i>
+        </div>
+        <span class="txt_menu">Пункт меню 4</span>
+      </a>
+    </div>
+    <div class="delimiter"></div>
+    <div class="menu_item">
+      <a id="5" onclick="clickMenu(this.id)">
+        <div class="svg">
+          <i class="fas fa-cog"></i>
+        </div>
+      <span class="txt_menu">Настройки</span>
+      </a>
+    </div>
+    <!-- <div class="delimiter"></div> -->
+   <!--  <div class="menu_item"><a href="#">
+      <img class="img_menu" src="../../img/driver/menu/setting.png">
+      <span class="txt_menu">Настройки</span></a></div> -->
+    <div class="menu_item">
+      <a id="6" onclick="clickMenu(this.id)">
+        <div class="svg">
+          <i class="fas fa-sign-out-alt"></i>
+        </div>
+        <span class="txt_menu">Выйти</span>
+      </a>
+    </div>
+  </div>
+
+
+  <div id="dcontent"> 
+    
+    <div id="dcontent2">
+      <div id="dcontent3">
+      Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32
+      </div>
+    </div>
+    <div id="info_box">
+       
+    </div>  
+   
+  </div>
+  
+  
+
+    
+     <!--  <script type="text/javascript" src="../js/driver/popper.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+ -->
+
+  <script language="JavaScript">
+
+    //Функции переключения меню
+    function maxMenu() {
+      menu = 1;
+      $('#sidebar-fixed').css({"width": "230px"});
+      $('.txt_menu').css("display","inline");
+      //$('#driver').css("width","144px");
+      //$('.txt_menu').fadeIn(200);
+      $('#driver').css("display","inline");
+      if($(window).width()>767){
+        $('#dcontent').css("margin-left","230px");
+      }
+    }
+    function minMenu() {
+      menu = 0;
+      $('#sidebar-fixed').css({"width": "52px"});
+      $('#dcontent').css("margin-left","52px");
+      $('.txt_menu').css("display","none");
+      //$('#driver').css("width","0");
+      $('#driver').css("display","none");
+      //$('.txt_menu').fadeOut(200);
+    }
+
+    $(document).ready(function(e)
+    {
+      menu = 1;
+      maxMenu();
+      //После загрузке страницы
+      //minMenu(); menu = 0;
+      //if($(window).width() > 767){   maxMenu();   }
+      //if($(window).width() <=767){   minMenu();  }
+      
+      //После нажатия на кнопку переключения
+      $('#toggleMenu').bind('click', function(){
+        if($('#sidebar-fixed').css("width")=="230px"){  minMenu();   }
+        else{                                           maxMenu();    } 
+      });
+
+      //При ресайзе окна
+      $(window).resize(function() {
+        if(menu){//если меню развернуто
+          //if($(window).width() > 767){  maxMenu();  }
+          if($(window).width() <=767){  minMenu();  }
+        }
+      });
+
+      //При загрузке страницы загружаем контент c "Моими заказами"
+      $('#dheader-text').html('Пункт меню 1');
+      
+      
+  
+    }) //end document ready
+
+   
+  </script>
+
+
+</body></html>
